@@ -1,0 +1,218 @@
+Antminer KA3
+Antminer K7
+Antminer L7
+iBeLink BM-K1 Max Blake2S Miner
+Antminer D7
+Antminer S19 XP Hyd
+iBeLink BM-K1+ Blake2S Miner
+Jasminer X4 Server (2500 MH/s)
+iPollo G1
+Antminer S19 XP
+iPollo V1
+Antminer Z15
+Antminer E9
+Canaan AvalonMiner 1366
+MicroBT Whatsminer M50S
+Goldshell LT6
+iPollo V1 Classic
+Goldshell KD6
+iBeLink BM-K1 Blake2S Miner
+MicroBT Whatsminer M50
+Antminer S19a Pro
+Antminer S19 Pro
+Innosilicon A6+ LTC Master
+Linzhi Phoenix
+Canaan AvalonMiner 1346
+Goldshell CK6
+MicroBT Whatsminer M30S++
+Antminer S19j Pro
+Goldshell LT5
+Blackminer F1-Ultra
+StrongU STU-U6
+Jasminer X4 Server (520 MH/s)
+Jasminer X4 Server (450 MH/s)
+Baikal G28
+iPollo V1 Mini SE Plus
+MicroBT Whatsminer M30S+
+Antminer S19
+Antminer S19a
+iPollo V1 Mini
+Antminer S19j
+Goldshell KD5
+iPollo V1 Mini SE
+Canaan AvalonMiner 1266
+iPollo V1 Mini Classic Plus
+Fusionsilicon X7
+Innosilicon A6 LTC Master
+iPollo V1 Mini Classic
+Jasminer X4 Brick
+Innosilicon A4+
+iPollo G1 Mini
+Blackminer F1 Mini+
+Goldshell CK5
+Blackminer F1 Mini
+iBeLink BM-S1 Max Blake2B Miner
+Baikal BK-N+
+Innosilicon S11 - SiaMaster
+Baikal Miner Cube
+Goldshell X5
+Innosilicon A10
+Antminer L3
+Blackminer F1
+Antminer T19
+Baikal X
+Goldshell X5S
+Baikal Quadruple Mini Miner
+Baikal Giant A900
+MicroBT Whatsminer M30S
+Canaan AvalonMiner 1246
+Innosilicon A11
+Antminer L3+
+Antminer S17 Pro 50 TH/s
+Antminer S17 Pro
+StrongU STU-U1++
+Antminer L3++
+Baikal Giant+ A2000
+Antminer Z9 Mini
+Innosilicon A10 Pro
+HyperBit BW L21
+Innosilicon A9 ZMaster
+Antminer S17+
+Innosilicon A10 Pro 6GB
+StrongU Hornbill H8 Pro
+Hummer Miner H9 Pro
+Antminer DR5
+Obelisk SC1 Slim
+Obelisk SC1
+Antminer S1
+Antminer S3
+Ebang Ebit E11++
+Baikal BK-B
+Antminer Z11
+MicroBT Whatsminer D1
+StrongU STU-U8
+MicroBT Whatsminer M31S
+Cheetah Miner F5+
+Canaan AvalonMiner 1166 Pro
+MicroBT Whatsminer M31S+
+Antminer S17 53 TH/s
+Baikal BK-D
+Obelisk DCR1 Slim
+Obelisk DCR1
+Antminer S17
+Antminer E3
+Innosilicon A9++ ZMaster
+Monad Imperium V1
+Goldshell HS5
+Antminer R4
+Innosilicon T3 43T
+Antminer S17e
+Antminer S5
+Innosilicon A5 Dash Master
+Antminer S15
+Obelisk SC1 Dual
+Fusionsilicon X2
+Canaan AvalonMiner 1041
+Antminer Z11j
+StrongU Hornbill H8
+Innosilicon A9+ ZMaster
+Antminer Z9
+Antminer S9k
+Dayun Zig M1
+Antminer T15
+Ebang Ebit E11+
+Innosilicon A4
+Antminer S9 SE
+Canaan AvalonMiner 1166
+Innosilicon T3 39T
+MicroBT Whatsminer M21
+Antminer T17
+Innosilicon T3 40T
+Monad Imperium V2
+Canaan AvalonMiner 821
+Canaan AvalonMiner 1166 Pro S 72T
+Canaan AvalonMiner 841
+MicroBT Whatsminer M20S
+Antminer S9i
+Bitfury RD4
+Aladdin T1 16T 
+Antminer S9
+Antminer S11
+MultMiner M1
+Antminer S9j
+Innosilicon T3+Pro 67T
+Ebang Ebit E11
+Antminer Z11e
+Antminer T17+
+Toddminer C1
+Antminer D5
+Ebang Ebit E9.2
+Canaan AvalonMiner 741
+Antminer V9
+Canaan AvalonMiner 1041F
+Ebang Ebit E12
+Innosilicon D9 - DecredMaster
+Canaan AvalonMiner 851
+Canaan AvalonMiner 1126 Pro S 68T
+MicroBT Whatsminer M10
+Antminer S2
+Canaan AvalonMiner 921
+Canaan AvalonMiner 1146 Pro
+Canaan AvalonMiner 1026
+Antminer T17e
+Obelisk SC1 Immersion
+Monad Imperium F2
+iPollo B1L
+Ebang Ebit E10
+Ebang Ebit E9i
+Fusionsilicon X1
+Canaan AvalonMiner 1047
+Antminer T9
+Canaan AvalonMiner 911
+Antminer T9+
+Antminer S9 Hydro
+Canaan AvalonMiner 1126 Pro S 64T
+MicroBT Whatsminer M32S
+Cheetah Miner F3
+Innosilicon T2T-30T
+Antminer D3
+Antminer DR3
+Innosilicon A5+ Dash Master
+Cheetah Miner F5
+Innosilicon D9+ DecredMaster
+Antminer S7
+Dayun Zig Z1+
+Monad Imperium R2
+Dayun Zig Z1
+Canaan AvalonMiner 1146
+Innosilicon T2T-26T
+Ebang Ebit E9.3
+StrongU STU-U1
+Innosilicon T3+ 57T
+Cheetah Miner F5M
+Canaan AvalonMiner 1126 Pro S 60T
+Spondoolies SPx36
+Innosilicon T3 50T
+Cheetah Miner F5I
+Canaan AvalonMiner 1066Pro
+MicroBT Whatsminer M21S
+Aisen A1 24T
+Antminer S4
+Antminer K5
+Hummer Miner H7 Pro 48 TH
+StrongU STU-U1+
+Dayun Zig Z1 Pro
+Canaan AvalonMiner 1066
+MicroBT Whatsminer M10S
+Hummer Miner H7 Pro 53 TH
+MicroBT Whatsminer M3
+MicroBT Whatsminer M3X
+Aladdin T1 32T 
+Ebang Ebit E10.3
+iBeLink DM56G X11/Dash Miner
+iBeLink DSM6T Blake256 Miner
+iBeLink DSM7T Miner
+Dayun Zig D1
+Hummer Miner H1
+Bitfury Tardis
+Bitfury B8

@@ -11,7 +11,11 @@ def main(alg, hashRate, power, power_cost, hashuint, rub=False):
             usd = data['Valute']['USD']['Value']
             power_cost = float(power_cost) / float(usd)
 
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('--no-sandbox')
+
+    driver = webdriver.Chrome(options=options)
     link = f'https://cryptocalc.online/ru/calculators/{alg}?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
     print(link)
     headers = {
@@ -102,7 +106,11 @@ def main2(alg, hashRate, power, power_cost, hashuint, rub=False):
             data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
             usd = data['Valute']['USD']['Value']
             power_cost = float(power_cost) / float(usd)
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('--no-sandbox')
+
+    driver = webdriver.Chrome(options=options)
     link = f'https://cryptocalc.online/ru/calculators/{alg}?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
     print(link)
     headers = {
@@ -196,7 +204,11 @@ def litecoin(alg, hashRate, power, power_cost, hashuint, rub=False):
             data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
             usd = data['Valute']['USD']['Value']
             power_cost = float(power_cost) / float(usd)
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('--no-sandbox')
+
+    driver = webdriver.Chrome(options=options)
     link = f'https://cryptocalc.online/ru/calculators/{alg}?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
     link2 = f'https://cryptocalc.online/ru/calculators/dogecoin?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
 
@@ -399,7 +411,11 @@ def litecoin2(alg, hashRate, power, power_cost, hashuint, rub=False):
             data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
             usd = data['Valute']['USD']['Value']
             power_cost = float(power_cost) / float(usd)
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('--no-sandbox')
+
+    driver = webdriver.Chrome(options=options)
     link = f'https://cryptocalc.online/ru/calculators/{alg}?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
     link2 = f'https://cryptocalc.online/ru/calculators/dogecoin?hashRate={hashRate}&power={power}&powerCost={power_cost}&hashUnit={hashuint}&poolFee=0'
 

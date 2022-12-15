@@ -61,6 +61,15 @@ eu.add(training)
 eu.add(help)
 
 
+tutor = types.InlineKeyboardMarkup(row_width=1)
+t = types.InlineKeyboardButton(text='Урок 2', callback_data='Урок 2')
+tutor.add(t)
+
+
+tutor2 = types.InlineKeyboardMarkup(row_width=1)
+t = types.InlineKeyboardButton(text='Урок 3', callback_data='Урок 3')
+tutor2.add(t)
+
 ru = types.ReplyKeyboardMarkup(row_width=1)
 calculating_profitability = types.KeyboardButton(text='📊Расчет прибыльности')
 сhange_settings = types.KeyboardButton(text='⚙Изменить настройки')
@@ -268,6 +277,14 @@ Example:
         bot.send_message(message.from_user.id, "Бот для обратной связи: @CalcCryptoSupport_bot")
 
 
+    if message.text == "💰Обучение":
+        text4 = '''Вы получили бесплатное обучение❗️
+
+Это бесплатное обучение азам в мире криптовалют. 
+Тут вы можете научиться пльзоваться криптой, современными технологиями.
+Первый урок - https://telegra.ph/Poshagovaya-instrukciya-kak-ustanovit-koshelek-Trust-Wallet-12-15'''
+        bot.send_message(message.from_user.id, f'{text4}', reply_markup=tutor)
+
 
 
     if message.text == "RUB":
@@ -297,134 +314,136 @@ Example:
         bot.send_message(message.from_user.id, "Вы в главном меню", reply_markup=ru)
 
 def asic(message):
-    asic = message.text
-    if asic == 'В главное меню':
-        bot.send_message(message.from_user.id, "Вы в главном меню", reply_markup=ru)
-    else:
-        db_sess = Session()
-        us = db_sess.query(User).filter(User.id == message.from_user.id).first()
-        side = ''
-        try:
-            print(asics_s[asic + '\xa0'][0])
-            print('ОНО')
-            if 'TH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'TH'
-            elif 'MH/s' in asics_s[asic + '\xa0'][0]:
-                print('ДА')
-                side = 'MH'
-            elif 'KH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'KH'
-            elif 'GH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'GH'
-            elif 'H/s' in asics_s[asic + '\xa0'][0]:
-                side = 'H'
-        except Exception:
-            print(asics_s[asic][0])
-            print('ОНО')
-            if 'TH/s' in asics_s[asic][0]:
-                side = 'TH'
-            elif 'MH/s' in asics_s[asic][0]:
-                print('ДА')
-                side = 'MH'
-            elif 'KH/s' in asics_s[asic][0]:
-                side = 'KH'
-            elif 'GH/s' in asics_s[asic][0]:
-                side = 'GH'
-            elif 'H/s' in asics_s[asic][0]:
-                side = 'H'
-
-        count = ''
-        rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
+    try:
+        asic = message.text
+        if asic == 'В главное меню':
+            bot.send_message(message.from_user.id, "Вы в главном меню", reply_markup=ru)
         else:
-            count = '$'
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        current_date = date.today()
-        data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
-        usd = data['Valute']['USD']['Value']
-        text = f''' {asic}
+            db_sess = Session()
+            us = db_sess.query(User).filter(User.id == message.from_user.id).first()
+            side = ''
+            try:
+                print(asics_s[asic + '\xa0'][0])
+                print('ОНО')
+                if 'TH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'TH'
+                elif 'MH/s' in asics_s[asic + '\xa0'][0]:
+                    print('ДА')
+                    side = 'MH'
+                elif 'KH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'KH'
+                elif 'GH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'GH'
+                elif 'H/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'H'
+            except Exception:
+                print(asics_s[asic][0])
+                print('ОНО')
+                if 'TH/s' in asics_s[asic][0]:
+                    side = 'TH'
+                elif 'MH/s' in asics_s[asic][0]:
+                    print('ДА')
+                    side = 'MH'
+                elif 'KH/s' in asics_s[asic][0]:
+                    side = 'KH'
+                elif 'GH/s' in asics_s[asic][0]:
+                    side = 'GH'
+                elif 'H/s' in asics_s[asic][0]:
+                    side = 'H'
+
+            count = ''
+            rub = False
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            current_date = date.today()
+            data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
+            usd = data['Valute']['USD']['Value']
+            text = f''' {asic}
 Время: {current_time}
 Дата:  {current_date}
 
 '''
-        try:
-            if asics_s[asic + '\xa0'][2] == 'litecoin':
-                text2 = litecoin2(asics_s[asic + '\xa0'][2], asics_s[asic + '\xa0'][0].split(' ')[0], asics_s[asic + '\xa0'][1], us.power, side, rub=rub)
-            else:
-                text2 = main(asics_s[asic + '\xa0'][2], asics_s[asic + '\xa0'][0].split(' ')[0], asics_s[asic + '\xa0'][1], us.power, side, rub=rub)
+            try:
+                if asics_s[asic + '\xa0'][2] == 'litecoin':
+                    text2 = litecoin2(asics_s[asic + '\xa0'][2], asics_s[asic + '\xa0'][0].split(' ')[0], asics_s[asic + '\xa0'][1], us.power, side, rub=rub)
+                else:
+                    text2 = main(asics_s[asic + '\xa0'][2], asics_s[asic + '\xa0'][0].split(' ')[0], asics_s[asic + '\xa0'][1], us.power, side, rub=rub)
 
-        except Exception:
-            if asics_s[asic][2] == 'litecoin':
-                text2 = litecoin2(asics_s[asic][2], asics_s[asic][0].split(' ')[0], asics_s[asic][1], us.power, side, rub=rub)
-            else:
-                text2 = main(asics_s[asic][2], asics_s[asic][0].split(' ')[0], asics_s[asic][1], us.power, side, rub=rub)
+            except Exception:
+                if asics_s[asic][2] == 'litecoin':
+                    text2 = litecoin2(asics_s[asic][2], asics_s[asic][0].split(' ')[0], asics_s[asic][1], us.power, side, rub=rub)
+                else:
+                    text2 = main(asics_s[asic][2], asics_s[asic][0].split(' ')[0], asics_s[asic][1], us.power, side, rub=rub)
 
 
 
-        text4 = f'''-------------------------------------
-        
+            text4 = f'''-------------------------------------
         
 При указанной цене за kWh {us.power}{count}.
 
 Цена доллара к рублю 1$\{usd}₽
 
 '''
-        text3 = text + '\n' + text2 + '\n' + text4
-        bot.send_message(message.from_user.id, text3, reply_markup=ru)
-
+            text3 = text + '\n' + text2 + '\n' + text4
+            bot.send_message(message.from_user.id, text3, reply_markup=ru)
+    except Exception:
+        pass
 
 
 def asic2(message):
-    asic = message.text
-    if asic == 'To the main menu':
-        bot.send_message(message.from_user.id, "You are in the main menu", reply_markup=eu)
-    else:
-        db_sess = Session()
-        us = db_sess.query(User).filter(User.id == message.from_user.id).first()
-        side = ''
-        try:
-            print(asics_s[asic + '\xa0'][0])
-            if 'TH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'TH'
-            elif 'MH/s' in asics_s[asic + '\xa0'][0]:
-                print('ДА')
-                side = 'MH'
-            elif 'KH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'KH'
-            elif 'GH/s' in asics_s[asic + '\xa0'][0]:
-                side = 'GH'
-            elif 'H/s' in asics_s[asic + '\xa0'][0]:
-                side = 'H'
-        except Exception:
-            print(asics_s[asic][0])
-            if 'TH/s' in asics_s[asic][0]:
-                side = 'TH'
-            elif 'MH/s' in asics_s[asic][0]:
-                print('ДА')
-                side = 'MH'
-            elif 'KH/s' in asics_s[asic][0]:
-                side = 'KH'
-            elif 'GH/s' in asics_s[asic][0]:
-                side = 'GH'
-            elif 'H/s' in asics_s[asic][0]:
-                side = 'H'
-
-        count = ''
-        rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
+    try:
+        asic = message.text
+        if asic == 'To the main menu':
+            bot.send_message(message.from_user.id, "You are in the main menu", reply_markup=eu)
         else:
-            count = '$'
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        current_date = date.today()
-        data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
-        usd = data['Valute']['USD']['Value']
-        text = f''' {asic}
+            db_sess = Session()
+            us = db_sess.query(User).filter(User.id == message.from_user.id).first()
+            side = ''
+            try:
+                print(asics_s[asic + '\xa0'][0])
+                if 'TH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'TH'
+                elif 'MH/s' in asics_s[asic + '\xa0'][0]:
+                    print('ДА')
+                    side = 'MH'
+                elif 'KH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'KH'
+                elif 'GH/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'GH'
+                elif 'H/s' in asics_s[asic + '\xa0'][0]:
+                    side = 'H'
+            except Exception:
+                print(asics_s[asic][0])
+                if 'TH/s' in asics_s[asic][0]:
+                    side = 'TH'
+                elif 'MH/s' in asics_s[asic][0]:
+                    print('ДА')
+                    side = 'MH'
+                elif 'KH/s' in asics_s[asic][0]:
+                    side = 'KH'
+                elif 'GH/s' in asics_s[asic][0]:
+                    side = 'GH'
+                elif 'H/s' in asics_s[asic][0]:
+                    side = 'H'
+
+            count = ''
+            rub = False
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            current_date = date.today()
+            data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
+            usd = data['Valute']['USD']['Value']
+            text = f''' {asic}
 Time: {current_time}
 Date:  {current_date}
 
@@ -435,14 +454,14 @@ Date:  {current_date}
                                   asics_s[asic + '\xa0'][1], us.power, side, rub=rub)
             else:
                 text2 = main2(asics_s[asic + '\xa0'][2], asics_s[asic + '\xa0'][0].split(' ')[0], asics_s[asic + '\xa0'][1],
-                             us.power, side, rub=rub)
+                                 us.power, side, rub=rub)
         except Exception:
             if asics_s[asic][2] == 'litecoin':
                 text2 = litecoin(asics_s[asic][2], asics_s[asic][0].split(' ')[0],
                                   asics_s[asic][1], us.power, side, rub=rub)
             else:
                 text2 = main2(asics_s[asic][2], asics_s[asic][0].split(' ')[0], asics_s[asic][1],
-                             us.power, side, rub=rub)
+                                 us.power, side, rub=rub)
         text4 = f'''-------------------------------------
 
 At the specified price per kWh {us.power}{count}.
@@ -452,6 +471,8 @@ The price of the dollar to the ruble 1$\{usd}₽
 '''
         text3 = text + '\n' + text2 + '\n' + text4
         bot.send_message(message.from_user.id, text3, reply_markup=eu)
+    except Exception:
+        pass
 
 
 def hash(message):
@@ -554,4 +575,17 @@ def electricity_ru(message):
     db_sess.commit()
     bot.send_message(message.from_user.id, 'Успешно изменено', reply_markup=ru)
 
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline(call):
+    if call.message:
+        if call.data == "Урок 2":
+            text5 = """Урок 2: Регистрация на крипто бирже 
+
+Биржа это как банк в крипте. У каждого криптана должна быть хотя бы одна регистрация на бирже. 
+https://telegra.ph/Kak-zaregistrirovatsya-na-Binance-12-15"""
+            bot.send_message(call.from_user.id, f'{text5}', reply_markup=tutor2)
+
+        if call.data == "Урок 3":
+            bot.send_message(call.from_user.id, 'Совсем скоро мы продолжим обучение!', reply_markup=ru)
 bot.polling(none_stop=True, interval=0)

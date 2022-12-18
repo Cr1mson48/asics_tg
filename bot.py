@@ -208,13 +208,16 @@ def get_text_messages(message):
 Example:
 14
 1370'''
-
-        if us.language == 'Ru':
+        try:
+            if us.language == 'Ru':
+                bot.send_message(message.from_user.id, f"{text}")
+                bot.register_next_step_handler(message, hash2)
+            else:
+                bot.send_message(message.from_user.id, f"{text2}")
+                bot.register_next_step_handler(message, hash)
+        except Exception:
             bot.send_message(message.from_user.id, f"{text}")
             bot.register_next_step_handler(message, hash2)
-        else:
-            bot.send_message(message.from_user.id, f"{text2}")
-            bot.register_next_step_handler(message, hash)
 
     if message.text == "Scrypt":
         db_sess = Session()
@@ -227,13 +230,16 @@ Example:
 Example:
 9500
 1370'''
-
-        if us.language == 'Ru':
+        try:
+            if us.language == 'Ru':
+                bot.send_message(message.from_user.id, f"{text}")
+                bot.register_next_step_handler(message, scrypt2)
+            else:
+                bot.send_message(message.from_user.id, f"{text2}")
+                bot.register_next_step_handler(message, scrypt)
+        except Exception:
             bot.send_message(message.from_user.id, f"{text}")
             bot.register_next_step_handler(message, scrypt2)
-        else:
-            bot.send_message(message.from_user.id, f"{text2}")
-            bot.register_next_step_handler(message, scrypt)
 
     if message.text == "⚙Изменить настройки":
         bot.send_message(message.from_user.id, "Выберите настройки", reply_markup=settingsru)
@@ -312,20 +318,26 @@ Example:
         us = db_sess.query(User).filter(User.id == message.from_user.id).first()
         us.money = 'Rub'
         db_sess.commit()
-        if us.language == 'Ru':
+        try:
+            if us.language == 'Ru':
+                bot.send_message(message.from_user.id, "Валюта изменена.", reply_markup=ru)
+            else:
+                bot.send_message(message.from_user.id, "Currency changed.", reply_markup=eu)
+        except Exception:
             bot.send_message(message.from_user.id, "Валюта изменена.", reply_markup=ru)
-        else:
-            bot.send_message(message.from_user.id, "Currency changed.", reply_markup=eu)
 
     if message.text == "USD":
         db_sess = Session()
         us = db_sess.query(User).filter(User.id == message.from_user.id).first()
         us.money = 'Usd'
         db_sess.commit()
-        if us.language == 'Ru':
+        try:
+            if us.language == 'Ru':
+                bot.send_message(message.from_user.id, "Валюта изменена.", reply_markup=ru)
+            else:
+                bot.send_message(message.from_user.id, "Currency changed.", reply_markup=eu)
+        except Exception:
             bot.send_message(message.from_user.id, "Валюта изменена.", reply_markup=ru)
-        else:
-            bot.send_message(message.from_user.id, "Currency changed.", reply_markup=eu)
 
 
     if message.text == "To the main menu":

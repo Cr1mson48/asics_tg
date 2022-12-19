@@ -327,7 +327,10 @@ Example:
     if message.text == "RUB":
         db_sess = Session()
         us = db_sess.query(User).filter(User.id == message.from_user.id).first()
-        us.money = 'Rub'
+        try:
+            us.money = 'Rub'
+        except:
+            pass
         db_sess.commit()
         try:
             if us.language == 'Ru':
@@ -340,7 +343,10 @@ Example:
     if message.text == "USD":
         db_sess = Session()
         us = db_sess.query(User).filter(User.id == message.from_user.id).first()
-        us.money = 'Usd'
+        try:
+            us.money = 'Usd'
+        except:
+            pass
         db_sess.commit()
         try:
             if us.language == 'Ru':
@@ -396,10 +402,13 @@ def asic(message):
 
             count = ''
             rub = False
-            if us.money == 'Rub':
-                count = '₽'
-                rub = True
-            else:
+            try:
+                if us.money == 'Rub':
+                    count = '₽'
+                    rub = True
+                else:
+                    count = '$'
+            except Exception:
                 count = '$'
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
@@ -476,10 +485,13 @@ def asic2(message):
 
             count = ''
             rub = False
-            if us.money == 'Rub':
-                count = '₽'
-                rub = True
-            else:
+            try:
+                if us.money == 'Rub':
+                    count = '₽'
+                    rub = True
+                else:
+                    count = '$'
+            except Exception:
                 count = '$'
             now = datetime.now()
             current_time = now.strftime("%H:%M:%S")
@@ -529,10 +541,13 @@ def hash(message):
         side = ''
         count = ''
         rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
-        else:
+        try:
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+        except Exception:
             count = '$'
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
@@ -570,10 +585,13 @@ def scrypt(message):
         side = ''
         count = ''
         rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
-        else:
+        try:
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+        except Exception:
             count = '$'
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
@@ -612,10 +630,13 @@ def hash2(message):
         side = ''
         count = ''
         rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
-        else:
+        try:
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+        except Exception:
             count = '$'
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
@@ -651,10 +672,13 @@ def scrypt2(message):
         side = ''
         count = ''
         rub = False
-        if us.money == 'Rub':
-            count = '₽'
-            rub = True
-        else:
+        try:
+            if us.money == 'Rub':
+                count = '₽'
+                rub = True
+            else:
+                count = '$'
+        except Exception:
             count = '$'
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
